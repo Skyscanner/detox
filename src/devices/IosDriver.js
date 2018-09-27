@@ -61,6 +61,12 @@ class IosDriver extends DeviceDriverBase {
     await this.client.execute(call);
   }
 
+  async dismissKeyboard(deviceId) {
+    const call = EarlyGrey.dismissKeyboardWithError(invoke.EarlGrey.instance);
+
+    await this.client.execute(call);
+  }
+
   defaultLaunchArgsPrefix() {
     return '-';
   }
