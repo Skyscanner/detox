@@ -1,7 +1,6 @@
 {
-  "name": "detox-demo-native-android",
+  "name": "@skyscanner/detox-demo-native-android",
   "version": "11.0.2",
-  "private": true,
   "scripts": {
     "packager": "react-native start",
     "detox-server": "detox run-server",
@@ -11,5 +10,8 @@
     "detox": "^11.0.2",
     "mocha": "^4.0.0"
   },
-  "detox": {}
+  "detox": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }

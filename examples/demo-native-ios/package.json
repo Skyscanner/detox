@@ -1,7 +1,6 @@
 {
-	"name": "detox-demo-native-ios",
+	"name": "@skyscanner/detox-demo-native-ios",
 	"version": "11.0.2",
-	"private": true,
 	"devDependencies": {
 		"detox": "^11.0.2",
 		"mocha": "^4.0.0"
@@ -22,5 +21,8 @@
 				"name": "iPhone 7 Plus"
 			}
 		}
-	}
+	},
+  "publishConfig": {
+    "access": "public"
+  }
 }
