@@ -1,6 +1,6 @@
 {
   "name": "@geekykaran/detox-demo-native-android",
-  "version": "9.0.6",
+  "version": "9.0.6-skyscanner",
   "scripts": {
     "packager": "react-native start",
     "detox-server": "detox run-server",

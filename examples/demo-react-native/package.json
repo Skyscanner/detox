@@ -1,6 +1,6 @@
 {
   "name": "@geekykaran/detox-example",
-  "version": "9.0.6",
+  "version": "9.0.6-skyscanner",
   "scripts": {
     "start": "react-native start"
   },
