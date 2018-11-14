@@ -1,5 +1,5 @@
 {
-  "name": "detox-cli",
+  "name": "@skyscanner/detox-cli",
   "version": "7.4.0",
   "description": "detox CLI tool wrapper",
   "main": "index.js",
@@ -32,5 +32,8 @@
   "homepage": "https://github.com/wix/detox#readme",
   "jest": {
     "verbose": true
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

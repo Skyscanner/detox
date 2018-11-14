@@ -1,7 +1,6 @@
 {
-  "name": "detox-test",
+  "name": "@skyscanner/detox-test",
   "version": "9.0.8",
-  "private": true,
   "scripts": {
     "test": ":",
     "packager": "react-native start",
@@ -72,5 +71,8 @@
         "name": "Nexus_5X_API_26"
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
