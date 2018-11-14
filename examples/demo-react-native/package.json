@@ -1,7 +1,6 @@
 {
-  "name": "example",
+  "name": "@skyscanner/detox-example",
   "version": "11.0.2",
-  "private": true,
   "scripts": {
     "start": "react-native start"
   },
@@ -43,5 +42,8 @@
         "name": "Nexus_5X_API_26"
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

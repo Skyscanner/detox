@@ -1,7 +1,6 @@
 {
-  "name": "demo-react-native-jest",
+  "name": "@skyscanner/detox-demo-react-native-jest",
   "version": "11.0.2",
-  "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test-ios": "detox build --configuration ios.sim.debug && detox test --configuration ios.sim.debug",
@@ -47,5 +46,8 @@
         "name": "Nexus_5X_API_26"
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
