@@ -1,9 +1,8 @@
 {
-	"name": "generation",
+	"name": "@geekykaran/detox-generation",
 	"version": "9.0.5",
 	"description": "Generate wrapper code for native dependencies",
 	"main": "index.js",
-	"private": true,
 	"scripts": {
 		"build": "./index.js",
 		"pretest": "./check-for-git-changes.sh",
@@ -49,5 +48,8 @@
 				"lines": 100
 			}
 		}
-	}
+	},
+  "publishConfig": {
+    "access": "public"
+  }
 }

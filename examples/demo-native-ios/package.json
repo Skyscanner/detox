@@ -1,7 +1,6 @@
 {
-	"name": "detox-demo-native-ios",
+	"name": "@geekykaran/detox-demo-native-ios",
 	"version": "9.0.6",
-	"private": true,
 	"devDependencies": {
 		"detox": "^9.0.6",
 		"mocha": "^4.0.0"
@@ -22,5 +21,8 @@
 				"name": "iPhone 7 Plus"
 			}
 		}
-	}
+	},
+  "publishConfig": {
+    "access": "public"
+  }
 }
