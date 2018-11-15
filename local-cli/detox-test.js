@@ -119,7 +119,7 @@ function runJest() {
 
   const platformString = platform ? `--testNamePattern='^((?!${getPlatformSpecificString(platform)}).)*$'` : '';
   const binPath = path.join('node_modules', '.bin', 'jest');
-  const command = `${binPath} ${testFolder} ${configFile} --maxWorkers=${program.workers} ${platformString}`;
+  const command = `${binPath} "${testFolder}" ${configFile} --maxWorkers=${program.workers} ${platformString}`;
   const env = Object.assign({}, process.env, {
     configuration: program.configuration,
     loglevel: program.loglevel,
