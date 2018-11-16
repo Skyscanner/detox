@@ -1,6 +1,6 @@
 {
 	"name": "@skyscanner/detox-demo-native-ios",
-	"version": "9.0.8",
+	"version": "9.0.8-skyscanner",
 	"devDependencies": {
 		"detox": "^9.0.8",
 		"mocha": "^4.0.0"
@@ -22,7 +22,7 @@
 			}
 		}
 	},
-  "publishConfig": {
-    "access": "public"
-  }
+	"publishConfig": {
+		"access": "public"
+	}
 }

@@ -1,7 +1,7 @@
 {
   "name": "@skyscanner/detox",
   "description": "E2E tests and automation for mobile",
-  "version": "9.0.8",
+  "version": "9.0.8-skyscanner",
   "bin": {
     "detox": "local-cli/detox.js"
   },
