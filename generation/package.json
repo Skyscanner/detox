@@ -1,6 +1,6 @@
 {
 	"name": "@skyscanner/detox-generation",
-	"version": "11.0.2",
+	"version": "11.0.2-skyscanner",
 	"description": "Generate wrapper code for native dependencies",
 	"main": "index.js",
 	"scripts": {
@@ -49,7 +49,7 @@
 			}
 		}
 	},
-  "publishConfig": {
-    "access": "public"
-  }
+	"publishConfig": {
+		"access": "public"
+	}
 }
