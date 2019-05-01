@@ -3,7 +3,7 @@
   "packages": [
     "detox"
   ],
-  "version": "12.6.1",
+  "version": "12.6.1-skyscanner",
   "npmClient": "npm",
   "command": {
     "publish": {
