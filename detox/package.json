@@ -1,5 +1,5 @@
 {
-  "name": "detox",
+  "name": "@skyscanner/detox",
   "description": "E2E tests and automation for mobile",
   "version": "12.6.1",
   "bin": {
@@ -113,5 +113,8 @@
         "lines": 100
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
