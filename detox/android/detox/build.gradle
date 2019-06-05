@@ -4,10 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 
 def _ext = rootProject.ext
 
-def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 25
-def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '27.0.3'
+def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 28
+def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '28.0.3'
 def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 18
-def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 25
+def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 28
 def _kotlinVersion = _ext.has('detoxKotlinVersion') ? _ext.detoxKotlinVersion : '1.2.0'
 def _kotlinStdlib = _ext.has('detoxKotlinStdlib') ? _ext.detoxKotlinStdlib : 'kotlin-stdlib-jdk8'
 
@@ -91,4 +91,49 @@ dependencies {
 
 if (rootProject.hasProperty('isOfficialDetoxLib')) {
     apply from: './detox-publishing.gradle'
+}
+
+def user = project.properties["SKYSCANNER_ARTIFACTORY_MAVEN_USER"]
+def pass = project.properties["SKYSCANNER_ARTIFACTORY_MAVEN_PASSWORD"]
+
+apply plugin: 'maven-publish'
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    // add a line per extra sourceset
+    // from android.sourceSets.minReactNative46.java.srcDirs
+    classifier "sources"
+}
+
+publishing {
+    publications {
+        publicationName(MavenPublication) {
+            groupId 'com.wix.detox'
+            artifactId 'detox'
+            artifact(sourceJar)
+            version '12.10.0'
+            artifact("$buildDir/outputs/aar/detox-12.10.0.aar")
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                //Iterate over the compile/impl dependencies (we don't want the test ones), adding a <dependency> node for each
+                (configurations.compile.allDependencies + configurations.implementation.allDependencies).each {
+                    if (it.group != null && (it.name != null || "unspecified".equals(it.name)) && it.version != null) {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = user
+                password = pass
+            }
+            url = "https://artifactory.skyscannertools.net/artifactory/infrastructure-maven"
+        }
+    }
 }
